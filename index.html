@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web pkk</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        header{
+            padding:15px;
+            background:black;
+            color: white;
+            font-family:verdana;
+        }
+        .header{
+            display:flex;
+            justify-content: center;
+            gap: 50px;
+            margin-left:30px;
+            margin-right:30px;
+        }
+        .child1{
+            /* height: auto;
+            width: auto; */
+            background: #FAC70F;           
+            padding: 20px;
+            text-align: center;
+        }
+        .img1{
+            width: 65%;
+            height: 400px;
+            box-shadow: 5px 5px 10px;
+        }       
+        .div1{
+            font-family: calibri;
+            font-weight: bold;
+            font-size: 20px;
+            background: #fdf693;
+            width: 40%;
+            padding: 30px;
+            border-radius: 2%;
+            box-shadow: 7px 7px 10px;
+            margin-left: auto;
+            margin-right: auto;           
+        }
+        .img2{
+            width: 100%;
+            height: 250px;
+            border-radius: 20%;
+        }
+        .keranjang{
+            width: 30%;
+            height: max-content;
+            background: #fdf693;
+            border-radius: 2%;
+            margin-top: 20px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;            
+            box-shadow: 7px 7px 10px;
+            font-family: calibri;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button{
+            background:  #FAC70F;
+            border: none;
+            font-family: calibri;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 5%;
+            cursor: pointer;
+        }
+        button:active{
+            background: #fae48c;
+        }
+        .child2{
+            background: black;
+            padding: 7px;
+            width: auto;
+            height: 120px;
+            color: white;
+            font-family: calibri;
+            font-size: 20px;
+            text-align: center;
+        }
+        .img3{
+            border-radius: 50%;
+            width: 15%;
+            height: 15%;
+            margin-top: 25px;
+        }
+        .sosmed{
+            justify-content: center;
+            font-size: 20px;   
+            text-align: center;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        a:active{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>MONRIBOX</h3>
+        <nav>
+            <div class="header">
+                <a href="#tentangKami">Tentang kami</a>
+                <a href="#produk">Produk kami</a>
+                <a href="#sosmed">Sosial media</a>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <div class="child1">
+            <img src="https://i.pinimg.com/736x/fb/86/a4/fb86a48872efecb4cdbbec75bba75ba2.jpg" class="img1"/>
+            <h1 id="tentangKami" style="font-family: calibri; background: #FFEC42;">Tentang Kami</h1>
+            <p style="font-family: calibri; font-size: 20px;"><b>Monribox</b> adalah sebuah brand yang menjual <i>Rice Box Chicken Katsu</i>. 
+                Kami memilih <i>Rice Box Chicken Katsu</i> sebagai usaha bisnis karena masyarakat modern cenderung 
+                memilih makanan yang praktis dan cepat disajikan, selain itu kami juga menawarkan produk kami 
+                dengan harga yang murah dan terjangkau bagi seluruh kalangan masyarakat. Usaha ini kami namakan 
+                Mondribox karena kami adalah anggota kelompok Senin yang 
+                menjual <i>rice box</i> maka dari itu tercetuslah nama Monribox.
+            </p>
+            <hr style="border: 1px solid  #fdf693;">
+            <h1 id="produk" style="font-family: calibri; background: #FFEC42;">Produk Kami</h1>
+            
+            <div class="div1">                
+                <div><img src="https://i.pinimg.com/736x/19/86/4f/19864f46aa0953a6ef7f7dc2f7556ccf.jpg" class="img2"/></div>
+                <div>
+                    <p>RICE BOX CHICKEN KATSU</p>
+                    <p style="text-align: left;">Rp. 13.000</p>
+                    <P style="text-align: justify;">Rice Box Chicken katsu adalah sejenis ayam fillet bagian dada 
+                        yang dibaluri tepung panir dan digoreng dengan api yang sedang 
+                        kemudian diberi saus dan disajikan dengan timun dan selada.</P>  
+                    <hr style="border: 1px solid  #FAC70F;">
+                    <button onclick="tambahProduk()">tambahkan produk ke keranjang</button>                 
+                </div>
+            </div>
+
+            <div class="keranjang">
+                <p id="jumlahProduk">0</p>   
+                <p id="jumlahHarga" style="text-align: left;">Rp. 0</p>     
+                <hr style="border: 1px solid  #FAC70F;">       
+                <button onclick="kurangiProduk()" style="margin-bottom: 10px;">kurangi produk di keranjang</button>
+                <button onclick="checkoutProduk()" >checkout via whatsapp</button>
+            </div>
+            
+            <img src="https://i.pinimg.com/736x/ff/75/cf/ff75cfc2d96479284dd0cfb331b3cb96.jpg" class="img3"/>
+            <h1 style="font-family: verdana;">M O N R I B O X</h1>
+        </div>             
+    </div>   
+    <footer class="child2">
+            <p id="sosmed">ikuti sosial media kami :</p>
+            <div class="sosmed">
+                <a href="https://www.facebook.com/share/1KYXT7C9vr/">Facebook</a> | 
+                <a href="https://www.instagram.com/monribox?igsh=YWU5a3NpbGdpamh5">Instagram</a> |
+                <a href="https://x.com/monribox?t=Ph9ZJ-xjBmSt9JiEu-bVAA&s=08">X</a> |
+                <a href="https://www.tiktok.com/@_monribox_uwu?_t=ZS-8w4cw6dZM2e&_r=1">Tiktok</a> |
+                <a href="https://youtube.com/@mondribbox?si=dUAxMKJl6LzbK73E">Youtube</a> |
+                <a href="https://id.shp.ee/W66Xtha">Shopee</a>
+            </div> 
+       </footer>
+       <script>
+        let jumlahProduk = 0;
+        const hargaProduk = 13000;
+    
+        const jumlah = document.getElementById("jumlahProduk");
+        const harga = document.getElementById("jumlahHarga");
+
+        function updatekeranjang(){
+            jumlah.textContent = jumlahProduk;
+            harga.textContent = `Rp. ${(jumlahProduk * hargaProduk).toLocaleString()}`;
+        }
+
+        function tambahProduk(){
+            jumlahProduk = jumlahProduk + 1;
+            updatekeranjang();
+        }
+
+        function kurangiProduk(){
+            if (jumlahProduk > 0){
+                jumlahProduk = jumlahProduk - 1;
+                updatekeranjang();
+            }
+        }
+
+        function checkoutProduk(){
+            if (jumlahProduk > 0){
+                const pesan = `Haloo, aku pengen beli ${jumlahProduk} rice box chicken katsu seharga Rp. ${(jumlahProduk*hargaProduk).toLocaleString()} dong`;
+                const encodePesan = encodeURIComponent(pesan);
+                const WaLink = `https://wa.me/6285281611537?text=${encodePesan}`;
+                window.open(WaLink, '_blank');
+            }
+            else {
+                alert("keranjangnya masih kosong!!!");
+            }
+        }
+    </script>
+    
+</body>
+</html>
